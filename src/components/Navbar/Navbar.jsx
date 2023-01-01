@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ children }) => (
   <div className="drawer">
@@ -10,15 +11,15 @@ const Navbar = ({ children }) => (
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
           </label>
         </div>
-        <div className="flex justify-around items-center w-full">
+        <div className="flex justify-around items-center w-full py-3">
           <h1 className="font-bold text-3xl ">
             Chala
             <span className="hightlight">.dev</span>
           </h1>
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
-              <li><a href="#s">Navbar Item 1</a></li>
-              <li><a href="#s">Navbar Item 2</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
         </div>
