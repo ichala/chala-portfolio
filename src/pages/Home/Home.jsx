@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import { FaGithubSquare, FaTwitterSquare, FaLinkedin } from 'react-icons/fa';
 
 const Home = () => (
@@ -14,7 +14,7 @@ const Home = () => (
       <a className="hover:opacity-70" href="https://github.com/ichala/" target="_blank" rel="noreferrer"><FaGithubSquare /></a>
       <a className="hover:opacity-70" href="https://twitter.com/_ichala" target="_blank" rel="noreferrer"><FaTwitterSquare /></a>
     </div>
-    <button type="button" className="btn btn-sm bg-main rounded-full border-0 hover:border-0">Contact Me</button>
+    <Link to="/contact" className="btn btn-sm bg-main rounded-full border-0 hover:border-0">Contact Me</Link>
   </div>
 );
 
