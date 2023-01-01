@@ -7,7 +7,7 @@ const Layout = () => (
   <main className="h-screen">
     <Waves />
     <Navbar>
-      <div className="hero h-full w-full mt-[-20px] bg-transparent">
+      <div className="hero h-full w-full mt-[-25px] bg-transparent">
         <div className="hero-content text-center">
           <div className="max-w-2xl">
             <Outlet />
