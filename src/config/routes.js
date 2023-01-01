@@ -1,3 +1,4 @@
+import Contact from '../pages/Contact/Contact';
 import Home from '../pages/Home/Home';
 import Layout from './Layout/Layout';
 
@@ -7,6 +8,14 @@ const routesConfig = [
     children: [
       {
         path: '/',
+        element: <Home />,
+      },
+      {
+        path: '/contact',
+        element: <Contact />,
+      },
+      {
+        path: '*',
         element: <Home />,
       },
     ],
