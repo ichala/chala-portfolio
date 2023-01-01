@@ -15,6 +15,10 @@ body {
   color: var(--secondary);
 }
 
+.bg-main {
+  background-color: var(--main);
+}
+
 .hightlight {
   color: var(--main);
 }
