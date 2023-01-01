@@ -1,8 +1,10 @@
+import { useRoutes } from 'react-router-dom';
+import routesConfig from './config/routes';
+
 function App() {
+  const routes = useRoutes(routesConfig);
   return (
-    <div className="App">
-      <h1 className="text-4xl text-primary">React App</h1>
-    </div>
+    routes
   );
 }
 
