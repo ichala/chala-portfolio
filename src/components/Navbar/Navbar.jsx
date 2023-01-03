@@ -19,8 +19,9 @@ const Navbar = ({ children }) => (
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
               <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About</Link></li>
               <li><Link to="/contact">Contact</Link></li>
-              <li><Link to="/skills">Skills</Link></li>
+
             </ul>
           </div>
         </div>
@@ -31,6 +32,7 @@ const Navbar = ({ children }) => (
       <label htmlFor="navbar" className="drawer-overlay" />
       <ul className="menu p-4 w-80 bg-base-100">
         <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
         <li><Link to="/contact">Contact</Link></li>
 
       </ul>

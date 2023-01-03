@@ -12,7 +12,7 @@ const colorTheme = {
   level1: 'hsla(var(--p) / 0.4)',
   level0: 'hsla(var(--p) / 0)',
 };
-const Skills = () => (
+const About = () => (
   <>
     <motion.h3
       initial={{ x: -100 }}
@@ -21,7 +21,7 @@ const Skills = () => (
       exit={{ x: -100, opacity: 0 }}
       className="text-3xl font-bold mt-5 w-full my-4"
     >
-      My Skills
+      About Me
       <motion.hr
         initial={{ opacity: 0, scale: 0, x: 300 }}
         animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -122,4 +122,4 @@ const Skills = () => (
   </>
 );
 
-export default Skills;
+export default About;

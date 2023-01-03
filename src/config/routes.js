@@ -1,6 +1,6 @@
 import Contact from '../pages/Contact/Contact';
 import Home from '../pages/Home/Home';
-import Skills from '../pages/Skills/Skills';
+import About from '../pages/About/About';
 import Layout from './Layout/Layout';
 
 const routesConfig = [
@@ -16,8 +16,8 @@ const routesConfig = [
         element: <Contact />,
       },
       {
-        path: '/skills',
-        element: <Skills />,
+        path: '/about',
+        element: <About />,
       },
       {
         path: '*',
