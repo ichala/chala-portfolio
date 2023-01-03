@@ -29,8 +29,8 @@ const Navbar = ({ children }) => (
     <div className="drawer-side">
       <label htmlFor="navbar" className="drawer-overlay" />
       <ul className="menu p-4 w-80 bg-base-100">
-        <li><a href="#s">Sidebar Item 1</a></li>
-        <li><a href="#s">Sidebar Item 2</a></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
 
       </ul>
 
