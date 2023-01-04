@@ -18,7 +18,7 @@ const Skills = () => (
       <div className="tabs tabs-boxed ">
         <NavLink
           to="/skills/"
-          exact
+          exact="true"
           className={({ isActive }) => (isActive ? 'tab-active tab' : 'tab')}
         >
           Frameworks

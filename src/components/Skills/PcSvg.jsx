@@ -3,7 +3,7 @@ import React from 'react';
 const PcSvg = () => (
   <svg
     fill="hsla(var(--p) / 0.4)"
-    className="w-52 h-52 "
+    className="w-28 h-28 "
     version="1.1"
     id="Capa_1"
     viewBox="0 0 490.605 490.605"
