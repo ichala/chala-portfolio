@@ -20,6 +20,7 @@ const Navbar = ({ children }) => (
             <ul className="menu menu-horizontal">
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About</Link></li>
+              <li><Link to="/skills">Skills</Link></li>
               <li><Link to="/contact">Contact</Link></li>
 
             </ul>
@@ -33,6 +34,7 @@ const Navbar = ({ children }) => (
       <ul className="menu p-4 w-80 bg-base-100">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>
+        <li><Link to="/skills">Skills</Link></li>
         <li><Link to="/contact">Contact</Link></li>
 
       </ul>
