@@ -7,7 +7,7 @@ import {
   SiPostgresql,
   SiRubygems,
 } from 'react-icons/si';
-import PLanguage from './Frameworks/PLanguage';
+import PLanguage from './PLanguage';
 
 const ProgramingLanguagesList = [
   {
@@ -32,7 +32,7 @@ const ProgramingLanguagesList = [
     value: '90',
   },
   {
-    name: 'PostgreSQL',
+    name: 'Database',
     icon: <SiPostgresql size={20} />,
     value: '80',
   },
