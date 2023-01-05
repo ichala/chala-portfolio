@@ -5,7 +5,7 @@ import {
   SiJira, SiTrello, SiSlack, SiDiscord, SiZoom, SiGooglemeet, SiFigma,
   SiAdobexd, SiAdobephotoshop, SiHtml5, SiCss3, SiSass, SiBootstrap, SiTailwindcss,
   SiJavascript, SiTypescript, SiPython, SiJava, SiC, SiCplusplus, SiCsharp, SiPhp, SiRuby, SiSwift,
-  SiKotlin, SiGo, SiR, SiNextdotjs, SiGit, SiRubyonrails,
+  SiKotlin, SiGo, SiR, SiNextdotjs, SiGit, SiRubyonrails, SiSymfony, SiAdobepremierepro,
 } from 'react-icons/si';
 
 // get the title and return the SiIcon
@@ -23,6 +23,8 @@ const IconGenerator = (IconName, size) => {
       return <SiMongodb size={size} />;
     case 'MySQL':
       return <SiMysql size={size} />;
+    case 'Symfony':
+      return <SiSymfony size={size} />;
     case 'Firebase':
       return <SiFirebase size={size} />;
     case 'AWS':
@@ -57,6 +59,8 @@ const IconGenerator = (IconName, size) => {
       return <SiAdobexd size={size} />;
     case 'AdobePhotoshop':
       return <SiAdobephotoshop size={size} />;
+    case 'AdobePremiere':
+      return <SiAdobepremierepro size={size} />;
     case 'HTML':
       return <SiHtml5 size={size} />;
     case 'CSS':
