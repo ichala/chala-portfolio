@@ -1,6 +1,7 @@
-import React from 'react';
-// import { motion } from 'framer-motion';
-import IconGenerator from '../../../config/IconGenerator';
+import React, { useEffect } from 'react';
+import { useOutletContext } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import TimeLine from '../../../components/Skills/Experience/TimeLine';
 
 const Career = [
   {
@@ -74,71 +75,194 @@ const Career = [
   },
 
 ];
+const Studies = [
+  {
+    name: 'Full Stack Web Developer',
+    company: 'Microverse',
+    companyLogo: '/assets/company-logos/microverse.jpg',
+    companyLink: 'https://www.microverse.org/',
+    location: 'Remote',
+    date: 'Feb 22 - Sep 22',
+    description: [
+      'Remote Work Best Practices',
+      'Time Management',
+      'Effective Networking',
+      'Cross-cultural Communication',
+      'Pair Programming',
+      'Code Reviews',
+    ],
+    tools: [
+      'Ruby',
+      'Ruby on Rails',
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'React',
+      'Redux',
+      'Git',
+      'Postgres',
+    ],
+  },
+  {
+    name: 'Master degree in Computer Science',
+    company: 'Esprit',
+    companyLogo: '/assets/company-logos/esprit.png',
+    companyLink: 'https://www.esprit.tn/',
+    location: 'On-Site',
+    date: 'Graduated Jun 20',
+    description: [
+      '2 years of preparation for a master degree in computer science',
+      '3 years of studies in computer science for a master degree',
+    ],
+    tools: [
+      'C',
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Python',
+      'C++',
+      'MySQL',
+      'PHP',
+      'Symfony',
+    ],
+  },
+  {
+    name: 'Bachelor in Computer Science',
+    company: 'high school',
+    companyLogo: '/assets/company-logos/Bac.png',
+    companyLink: 'http://www.education.gov.tn/',
+    location: 'On-Site',
+    date: 'Graduated Jun 15',
+    description: [
+      '9 years of primary and secondary education',
+      '2 years of studies in science and technology',
+      '3 years of studies in computer science for a bachelor degree',
+    ],
+    tools: [
+      'C',
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Java',
+      'Python',
+      'C++',
+      'MySQL',
+    ],
+  },
+];
+const Freelance = [
+  {
+    name: 'Freelance Web Developer',
+    company: 'Upwork',
+    companyLogo: '/assets/company-logos/upwork.ico',
+    companyLink: 'https://www.upwork.com/ag/microverse/',
+    location: 'Remote',
+    date: 'Jan 19 - Present',
+    description: [
+      'I have been working as a freelancer on Upwork for both myself and Microverse agency',
+    ],
+    tools: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'React',
+      'Redux',
+      'NodeJs',
+      'Ruby on Rails',
+      'MongoDB',
+      'Postgres',
+    ],
+  },
+  {
+    name: 'Freelance Developer',
+    company: 'Fiverr',
+    companyLogo: '/assets/company-logos/fiver.png',
+    companyLink: 'https://www.fiverr.com/',
+    location: 'Remote',
+    date: 'Jan 19 - Present',
+    description: [
+      'I have been working as a freelancer on Fiverr.',
+    ],
+    tools: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'React',
+      'Redux',
+      'NodeJs',
+      'Ruby on Rails',
+      'MongoDB',
+      'Postgres',
+    ],
+  },
 
-const Experience = () => (
-  <div className="p-4">
+  {
+    name: 'Web Developer & Video Editor',
+    company: 'Khamsat',
+    companyLogo: '/assets/company-logos/khamsat.png',
+    companyLink: 'https://khamsat.com/user/alijand',
+    location: 'Remote',
+    date: 'Jan 19 - Present',
+    description: [
+      'I have been working as a freelancer on Khamsat for web development projects & video editing projects',
+    ],
+    tools: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'React',
+      'Redux',
+      'NodeJs',
+      'AdobePremiere',
+      'AdobePhotoshop',
 
-    <ol className="relative border-l border-primary/50 ">
-      {Career.map((item) => (
-        <li key={item.name} className="mb-10 ml-6">
-          <span className="absolute flex items-center justify-center w-6 h-6 bg-primary rounded-full -left-3 ring-2 ring-primary ">
-            <div className="avatar">
-              <div className="w-6 h-6 rounded-full">
-                <img alt="a" src={item.companyLogo} />
-              </div>
-            </div>
-          </span>
-          <h3 className="flex items-center mb-1 text-lg font-semibold text-primary ">
-            <span>
-              {item.name}
-              {' '}
-              at
-              <a href={item.companyLink} target="_blank" className="text-primary/70 hover:underline ml-1" rel="noreferrer">
-                {item.company}
-              </a>
-            </span>
-            {item.current && (
-            <span className="badge badge-primary ml-2">Current</span>
-            )}
-          </h3>
-          <time className="block mb-2 text-sm font-normal leading-none text-primary/70 ">
-            {item.date}
-            {' '}
-            (
-            {item.location}
-            )
-          </time>
-          <ul>
-            {item.description.map((desc) => (
-              <li key={desc}>
-                <p className=" text-sm font-normal max-w-lg">
-                  -
-                  {desc}
-                </p>
-              </li>
-            ))}
-            <li className="flex gap-2 flex-wrap my-2 ">
-              {item.tools?.map((tool) => (
-                <span key={tool} className="rounded-full bg-primary  p-2 justify-center items-center text-primary-content tooltip tooltip-primary" data-tip={tool}>
-                  {IconGenerator(tool, 20)}
-                </span>
-              ))}
-            </li>
+    ],
 
-          </ul>
+  },
+];
 
-          {item.result && (
-          <a href={item.result} className="btn mt-2 items-center btn-sm btn-primary rounded-full ">
-            <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clipRule="evenodd" /></svg>
-            Check Result
-          </a>
-          )}
-        </li>
-      ))}
+const Experience = () => {
+  const { setTitle } = useOutletContext();
+  useEffect(() => {
+    setTitle('My Experience');
+  }, [setTitle]);
 
-    </ol>
-  </div>
+  return (
+    <div className="p-4 flex flex-col lg:flex-row items-start justify-start gap-4 ">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+        exit={{ opacity: 0 }}
+        className="flex flex-col"
+      >
+        <h2 className="py-4 text-3xl">Work Experience</h2>
+        <TimeLine career={Career} />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4 }}
+        exit={{ opacity: 0 }}
+        className="flex flex-col"
+      >
+        <h2 className="py-4 text-3xl">My Studies</h2>
+        <TimeLine career={Studies} />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+        exit={{ opacity: 0 }}
+        className="flex flex-col"
+      >
+        <h2 className="py-4 text-3xl">Freelancing</h2>
+        <TimeLine career={Freelance} />
+      </motion.div>
 
-);
+    </div>
+
+  );
+};
 
 export default Experience;
