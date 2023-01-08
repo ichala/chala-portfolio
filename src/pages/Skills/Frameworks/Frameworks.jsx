@@ -20,38 +20,39 @@ import { useOutletContext } from 'react-router-dom';
 import PcSvg from '../../../components/Skills/PcSvg';
 import ProgramingLanguages from '../../../components/Skills/Frameworks/ProgramingLanguages';
 import Framework from '../../../components/Skills/Frameworks/Framework';
+import SpeakingLanguages from '../../../components/Skills/SpeakingLanguages';
 
 const FrameworkList = [
   {
     name: 'ReactJs',
     icon: <SiReact size={40} />,
-    level: 'Senior',
+    level: 'Mid-Senior',
   },
   {
     name: 'Ruby On Rails',
     icon: <SiRuby size={40} />,
 
-    level: 'Senior',
+    level: 'Junior',
   },
   {
     name: 'NextJs',
     icon: <SiNextdotjs size={40} />,
-    level: 'Senior',
+    level: 'Junior',
   },
   {
     name: 'NodeJs',
     icon: <SiNodedotjs size={40} />,
-    level: 'Senior',
+    level: 'Junior',
   },
   {
     name: 'MongoDB',
     icon: <SiMongodb size={40} />,
-    level: 'Senior',
+    level: 'Junior',
   },
   {
     name: 'PostgreSQL',
     icon: <SiPostgresql size={40} />,
-    level: 'Senior',
+    level: 'Mid-Senior',
   },
   {
     name: 'Bootstrap',
@@ -66,22 +67,22 @@ const FrameworkList = [
   {
     name: 'Stimulus',
     icon: <SiStimulus size={40} />,
-    level: 'Senior',
+    level: 'Junior',
   },
   {
     name: 'Firebase',
     icon: <SiFirebase size={40} />,
-    level: 'Senior',
+    level: 'Mid-Senior',
   },
   {
     name: 'Jest',
     icon: <SiJest size={40} />,
-    level: 'Senior',
+    level: 'Mid-Senior',
   },
   {
     name: 'Git',
     icon: <SiGit size={40} />,
-    level: 'Senior',
+    level: 'Mid-Senior',
   },
   {
     name: 'NPM',
@@ -105,6 +106,7 @@ const Frameworks = () => {
     <div className="flex gap-2 flex-col justify-center items-center lg:flex-row lg:justify-start lg:items-start">
       <div className="left-content">
         <ProgramingLanguages />
+        <SpeakingLanguages />
       </div>
       <div className="right-content w-full">
         <motion.div
