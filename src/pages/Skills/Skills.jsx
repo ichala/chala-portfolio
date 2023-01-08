@@ -37,9 +37,6 @@ const Skills = () => {
           >
             Soft Skills
           </NavLink>
-          <a href="#e" className="tab">
-            Others
-          </a>
         </div>
       </div>
       <motion.hr
