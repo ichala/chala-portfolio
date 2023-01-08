@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = ({ children }) => (
   <div className="drawer">
@@ -18,8 +18,11 @@ const Navbar = ({ children }) => (
           </h1>
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+              <li><NavLink to="/">Home</NavLink></li>
+              <li><NavLink to="/about">About</NavLink></li>
+              <li><NavLink to="/skills/">Skills</NavLink></li>
+              <li><NavLink to="/contact">Contact</NavLink></li>
+
             </ul>
           </div>
         </div>
@@ -29,8 +32,10 @@ const Navbar = ({ children }) => (
     <div className="drawer-side">
       <label htmlFor="navbar" className="drawer-overlay" />
       <ul className="menu p-4 w-80 bg-base-100">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/about">About</NavLink></li>
+        <li><NavLink to="/skills/">Skills</NavLink></li>
+        <li><NavLink to="/contact">Contact</NavLink></li>
 
       </ul>
 

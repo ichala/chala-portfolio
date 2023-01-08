@@ -10,7 +10,7 @@ const ContactFrom = () => {
     <motion.form
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0, transition: { delay: 0.2 } }}
-      exit={{ y: 100, opacity: 0, transition: { delay: 0.2 } }}
+      exit={{ x: 100, opacity: 0, transition: { delay: 0.2 } }}
       className="form form-control flex flex-col gap-4 w-full max-w-md "
       onSubmit={handleSubmit}
     >
