@@ -31,9 +31,12 @@ const Skills = () => {
           >
             Experience
           </NavLink>
-          <a href="#e" className="tab">
-            Life Skills
-          </a>
+          <NavLink
+            to="/skills/soft"
+            className={({ isActive }) => (isActive ? 'tab-active tab' : 'tab')}
+          >
+            Soft Skills
+          </NavLink>
           <a href="#e" className="tab">
             Others
           </a>
