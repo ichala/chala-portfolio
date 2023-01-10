@@ -6,6 +6,7 @@ import Skills from '../pages/Skills/Skills';
 import Frameworks from '../pages/Skills/Frameworks/Frameworks';
 import Experience from '../pages/Skills/Experience/Experience';
 import Soft from '../pages/Skills/Soft/Soft';
+import Projects from '../pages/Projects/Projects';
 
 const routesConfig = [
   {
@@ -18,6 +19,10 @@ const routesConfig = [
       {
         path: '/contact',
         element: <Contact />,
+      },
+      {
+        path: '/projects',
+        element: <Projects />,
       },
       {
         path: '/about',
