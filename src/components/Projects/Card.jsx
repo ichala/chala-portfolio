@@ -1,8 +1,15 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import IconGenerator from '../../config/IconGenerator';
 
 const Card = ({ data }) => (
-  <div className="card w-96 bg-base-300 group hover:shadow-lg cursor-pointer">
+  <motion.div
+    initial={{ opacity: -100 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.3 }}
+    exit={{ opacity: 0 }}
+    className="card w-96 bg-base-300 group hover:shadow-lg cursor-pointer"
+  >
     <figure
       className=" group-hover:bg-primary  cursor-pointer bg-cover bg-center  h-[200px] w-full"
       style={{
@@ -22,7 +29,7 @@ const Card = ({ data }) => (
         <button type="button" className="btn btn-primary btn-xs">Learn now!</button>
       </div>
     </div>
-  </div>
+  </motion.div>
 );
 
 export default Card;
