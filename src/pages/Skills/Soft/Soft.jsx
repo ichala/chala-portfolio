@@ -39,7 +39,7 @@ const SoftSkills = [
   {
     id: 5,
     title: 'Self Motivation',
-    description: 'I have a good communication skills, I can work in a team and I can work alone.',
+    description: 'I am able to set clear goals for myself and have a strong sense of purpose and determination to achieve them.',
     icon: <RiEmotionHappyLine size={20} />,
   },
   {
