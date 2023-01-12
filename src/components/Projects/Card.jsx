@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import IconGenerator from '../../config/IconGenerator';
+import IconGenerator from '../../tools/IconGenerator';
 
 const Card = ({ data }) => (
+
   <motion.div
     initial={{ opacity: -100 }}
     animate={{ opacity: 1 }}
@@ -13,15 +14,17 @@ const Card = ({ data }) => (
     <figure
       className=" group-hover:bg-primary  cursor-pointer bg-cover bg-center  h-[200px] w-full"
       style={{
-        backgroundImage: `url(${data.image})`, backgroundRepeat: 'no-repeat',
+        backgroundImage: `url(${data.placeholderImage})`, backgroundRepeat: 'no-repeat',
       }}
     />
     <div className="card-body ">
-      <h2 className=" card-title text-base-content italic font-light">{data.title}</h2>
+      <h2 className=" card-title text-base-content italic font-light">{data.details.title}</h2>
       <div className="flex gap-2 flex-wrap text-primary">
         {
-        data.frameworks.map((framework) => (
-          IconGenerator(framework)
+        data.details?.frameworks.map((framework) => (
+          <div key={`${framework.value}`}>
+            {IconGenerator(framework.value)}
+          </div>
         ))
       }
       </div>
