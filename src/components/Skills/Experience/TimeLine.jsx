@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdOpenInNew } from 'react-icons/md';
-import IconGenerator from '../../../config/IconGenerator';
+import IconGenerator from '../../../tools/IconGenerator';
 
 const TimeLine = ({ career }) => (
   <ol className="relative border-l border-primary/50 ">
