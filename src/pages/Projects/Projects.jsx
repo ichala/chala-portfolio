@@ -2,36 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { BsFillFilterCircleFill } from 'react-icons/bs';
 import { useSearchParams } from 'react-router-dom';
+import { collection, getDocs, query } from 'firebase/firestore';
 import Card from '../../components/Projects/Card';
 import Search from '../../components/Projects/Filters/Search';
 import FrameworkFilter from '../../components/Projects/Filters/FrameworkFilter';
-
-const ProjectList = [
-  {
-    id: 1,
-    title: 'Life hack',
-    image:
-      'https://firebasestorage.googleapis.com/v0/b/chala-portfolio.appspot.com/o/media%2Fimage%2Finfluencers%2F1665261277269-eea856bf-f88a-4f7c-bd55-5f5c3057b8a3?alt=media&token=1363ea33-12ee-4fb1-8804-04f3d1f59299',
-    frameworks: ['React', 'TailwindCSS', 'Bootstrap'],
-  },
-  {
-    id: 2,
-    title: 'Life hack 2',
-    image:
-      'https://firebasestorage.googleapis.com/v0/b/chala-portfolio.appspot.com/o/media%2Fimage%2Finfluencers%2F1665261277269-eea856bf-f88a-4f7c-bd55-5f5c3057b8a3?alt=media&token=1363ea33-12ee-4fb1-8804-04f3d1f59299',
-    frameworks: ['React', 'NextJs'],
-  },
-  {
-    id: 3,
-    title: 'WEBPHONE',
-    image:
-      'https://firebasestorage.googleapis.com/v0/b/chala-portfolio.appspot.com/o/media%2Fimage%2F1669490133074-a03949cd-29e0-41a9-a7e4-c46b157cbf4e?alt=media&token=96a668dc-571a-4055-ab27-f8044f5cb08c',
-    frameworks: ['React', 'TailwindCSS', 'Bootstrap'],
-  },
-];
+import { db } from '../../config/firebase';
 
 const Projects = () => {
-  const [filteredProjects, setfilteredProjects] = useState(ProjectList);
+  const [filteredProjects, setfilteredProjects] = useState([]);
+  const [LoadingData, setLoadingData] = useState(true);
   const [FrameWorks, setFrameWorks] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const SelectedFrameworks = searchParams.get('framework')?.split(',') ?? [];
@@ -39,7 +18,6 @@ const Projects = () => {
     searchParams.set('search', event.target.value);
     setSearchParams(searchParams, { replace: false });
   };
-
   const handleFramework = (framework) => {
     const index = SelectedFrameworks.indexOf(framework);
     if (index === -1) {
@@ -56,30 +34,42 @@ const Projects = () => {
     setSearchParams(searchParams);
   };
 
-  const getFrameworks = () => {
-    const FrameWorkData = [];
-    ProjectList.map((project) => project.frameworks.map(
-      (data) => !FrameWorkData.includes(data) && FrameWorkData.push(data),
-    ));
-    setFrameWorks(FrameWorkData);
-  };
-
   useEffect(() => {
-    getFrameworks();
-    const frameworks = searchParams.get('framework')
-      ? searchParams.get('framework').split(',')
-      : [];
-    const search = searchParams.get('search');
-    setfilteredProjects(
-      ProjectList.filter(
-        (item) => (!search
-            || item.title.toLowerCase().includes(search.toLowerCase()))
+    const getFrameworks = (res) => {
+      const FrameWorkData = [];
+      res.map((project) => project.details?.frameworks.map(
+        (data) => !FrameWorkData.includes(data.value) && FrameWorkData.push(data.value),
+      ));
+      setFrameWorks(FrameWorkData);
+    };
+    const getProjects = async () => {
+      const res = [];
+      const q = query(collection(db, 'Chala.dev'));
+      const docSnap = await getDocs(q);
+      docSnap.forEach((doc) => {
+        res.push(doc.data().project);
+      });
+      getFrameworks(res);
+      const frameworks = searchParams.get('framework')
+        ? searchParams.get('framework').split(',')
+        : [];
+      const search = searchParams.get('search');
+      setfilteredProjects(
+        res.filter(
+          (item) => (!search
+            || item.details.title.toLowerCase().includes(search.toLowerCase()))
           && (!frameworks.length
-            || frameworks.every((framework) => item.frameworks.includes(framework))),
-      ),
-    );
+            || frameworks.every((framework) => item.details.frameworks
+              .map((data) => data.value).includes(framework))),
+        ),
+      );
+      setLoadingData(false);
+    };
+    getProjects();
   }, [searchParams]);
-
+  if (LoadingData) {
+    return <div>Loading...</div>;
+  }
   return (
     <>
       <motion.h3
