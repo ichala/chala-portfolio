@@ -7,9 +7,9 @@ import Frameworks from '../pages/Skills/Frameworks/Frameworks';
 import Experience from '../pages/Skills/Experience/Experience';
 import Soft from '../pages/Skills/Soft/Soft';
 import Projects from '../pages/Projects/Projects';
-import Protected from './Admin/protected_routes';
 import Dashboard from '../pages/Admin/Dashboard';
 import Login from '../pages/Admin/Login';
+import Protected from '../tools/protected_routes';
 
 const routesConfig = [
   {
