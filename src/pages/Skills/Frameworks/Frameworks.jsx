@@ -26,7 +26,7 @@ const FrameworkList = [
   {
     name: 'ReactJs',
     icon: <SiReact size={40} />,
-    level: 'Mid-Senior',
+    level: 'Mid-Level',
   },
   {
     name: 'Ruby On Rails',
@@ -52,7 +52,7 @@ const FrameworkList = [
   {
     name: 'PostgreSQL',
     icon: <SiPostgresql size={40} />,
-    level: 'Mid-Senior',
+    level: 'Mid-Level',
   },
   {
     name: 'Bootstrap',
@@ -72,17 +72,17 @@ const FrameworkList = [
   {
     name: 'Firebase',
     icon: <SiFirebase size={40} />,
-    level: 'Mid-Senior',
+    level: 'Mid-Level',
   },
   {
     name: 'Jest',
     icon: <SiJest size={40} />,
-    level: 'Mid-Senior',
+    level: 'Mid-Level',
   },
   {
     name: 'Git',
     icon: <SiGit size={40} />,
-    level: 'Mid-Senior',
+    level: 'Mid-Level',
   },
   {
     name: 'NPM',

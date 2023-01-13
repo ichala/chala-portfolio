@@ -5,7 +5,8 @@ import {
   SiJira, SiTrello, SiSlack, SiDiscord, SiZoom, SiGooglemeet, SiFigma,
   SiAdobexd, SiAdobephotoshop, SiHtml5, SiCss3, SiSass, SiBootstrap, SiTailwindcss,
   SiJavascript, SiTypescript, SiPython, SiJava, SiC, SiCplusplus, SiCsharp, SiPhp, SiRuby, SiSwift,
-  SiKotlin, SiGo, SiR, SiNextdotjs, SiGit, SiRubyonrails, SiSymfony, SiAdobepremierepro, SiStimulus,
+  SiKotlin, SiGo, SiR, SiNextdotjs, SiGit, SiRubyonrails,
+  SiSymfony, SiAdobepremierepro, SiStimulus, SiJest, SiMaterialui,
 } from 'react-icons/si';
 
 // get the title and return the SiIcon
@@ -25,6 +26,10 @@ const IconGenerator = (IconName, size) => {
       return <SiMysql size={size} />;
     case 'Symfony':
       return <SiSymfony size={size} />;
+    case 'Jest':
+      return <SiJest size={size} />;
+    case 'MaterialUI':
+      return <SiMaterialui size={size} />;
     case 'Stimulus':
       return <SiStimulus size={size} />;
     case 'Firebase':
@@ -67,7 +72,7 @@ const IconGenerator = (IconName, size) => {
       return <SiHtml5 size={size} />;
     case 'CSS':
       return <SiCss3 size={size} />;
-    case 'SASS':
+    case 'Sass':
       return <SiSass size={size} />;
     case 'Bootstrap':
       return <SiBootstrap size={size} />;

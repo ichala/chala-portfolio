@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import IconGenerator from '../../../tools/IconGenerator';
 
 const FrameworkFilter = ({ FrameWorks, handleFramework, SelectedFrameworks }) => (
-  <div className="flex flex-wrap gap-2">
+  <div className="flex flex-wrap gap-2 ">
     {FrameWorks.map((framework, index) => (
       <motion.button
         initial={{ opacity: 0 }}
@@ -12,10 +12,12 @@ const FrameworkFilter = ({ FrameWorks, handleFramework, SelectedFrameworks }) =>
         onClick={() => handleFramework(framework)}
         key={framework}
         type="button"
-        className={`btn btn-sm ${SelectedFrameworks.includes(framework) ? 'btn-primary' : ' btn-active'}`}
-      >
-        {IconGenerator(framework, 20)}
+        className={`btn btn-sm ${SelectedFrameworks.includes(framework) ? 'btn-primary' : ' btn-active'}  `}
 
+      >
+        <span className="tooltip  tooltip-primary" data-tip={framework}>
+          {IconGenerator(framework, 20)}
+        </span>
       </motion.button>
 
     )) }
