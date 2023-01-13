@@ -28,6 +28,7 @@ const options = [
   { value: 'Apollo', label: 'Apollo' },
   { value: 'TypeScript', label: 'TypeScript' },
   { value: 'Stimulus', label: 'Stimulus' },
+  { value: 'Jest', label: 'Jest' },
 
 ];
 
