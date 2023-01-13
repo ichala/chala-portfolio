@@ -93,8 +93,8 @@ const Projects = () => {
           className="border-[1px] border-primary/60 border-dashed w-full mt-2"
         />
       </motion.h3>
-      <label htmlFor="my-drawer-2" className=" m-2 drawer-button lg:hidden">
-        <div className="btm-nav z-20 ">
+      <label htmlFor="my-drawer-2" className="  drawer-button lg:hidden">
+        <div className="btm-nav z-20 my-2 ">
           <div>
             <BsFillFilterCircleFill className="text-primary" size={20} />
             <h2 className="text-primary font-normal">Filters</h2>
@@ -116,7 +116,7 @@ const Projects = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ x: -100, opacity: 0 }}
-            className="menu p-4 w-80 bg-base-100 text-base-content gap-2"
+            className="menu p-4 w-80 bg-base-200 text-base-content gap-2"
           >
             <div className="text-light flex gap-2 justify-start items-center">
               <BsFillFilterCircleFill />
