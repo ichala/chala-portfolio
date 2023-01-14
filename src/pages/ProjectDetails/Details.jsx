@@ -9,8 +9,8 @@ import { Navigation } from 'swiper';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-import IconGenerator from '../../../tools/IconGenerator';
-import { db } from '../../../config/firebase';
+import IconGenerator from '../../tools/IconGenerator';
+import { db } from '../../config/firebase';
 
 const Details = () => {
   const [Project, setProject] = useState(null);
