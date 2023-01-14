@@ -10,6 +10,7 @@ import Projects from '../pages/Projects/Projects';
 import Dashboard from '../pages/Admin/Dashboard';
 import Login from '../pages/Admin/Login';
 import Protected from '../tools/protected_routes';
+import Details from '../pages/ProjectDetails/Details';
 
 const routesConfig = [
   {
@@ -38,6 +39,11 @@ const routesConfig = [
       {
         path: '/projects',
         element: <Projects />,
+
+      },
+      {
+        path: '/project/details/:id',
+        element: <Details />,
       },
       {
         path: '/about',

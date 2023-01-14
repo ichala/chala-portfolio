@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { AiFillLock } from 'react-icons/ai';
+import { AiFillFire } from 'react-icons/ai';
 import { MdOutlineOpenInNew } from 'react-icons/md';
-import { SiGithub } from 'react-icons/si';
 import IconGenerator from '../../tools/IconGenerator';
 
 const Card = ({ data }) => (
@@ -21,7 +20,19 @@ const Card = ({ data }) => (
       }}
     />
     <div className="card-body ">
-      <h2 className=" card-title text-base-content italic font-light">{data.details.title}</h2>
+      <h2 className=" card-title text-base-content italic font-light">
+        {data.details.title}
+        {
+          data.details.hot && (
+            <div className="badge badge-primary font-medium badge-xs p-2 text-xs">
+              <AiFillFire />
+              {' '}
+              HOT
+            </div>
+          )
+        }
+
+      </h2>
       <div className="flex gap-2 flex-wrap text-primary items-center justify-start">
         {
         data.details?.frameworks.map((framework) => (
@@ -32,26 +43,11 @@ const Card = ({ data }) => (
       }
       </div>
       <div className="card-actions justify-end">
-        {
-          data.details.private ? (
-            <button type="button" className="btn btn-primary btn-xs gap-2">
-              <AiFillLock />
-              Private
-            </button>
-          ) : (
-            <a href={data.details.github} target="_blank" className="btn btn-primary btn-xs gap-2" rel="noreferrer">
-              <SiGithub />
-              View Code
 
-            </a>
-          )
-        }
-
-        <a href={data.details.live} target="_blank" className="btn btn-primary btn-xs gap-2 " rel="noreferrer">
+        <button type="button" className="btn btn-primary btn-xs gap-2 ">
           <MdOutlineOpenInNew />
-          View Demo
-
-        </a>
+          View Details
+        </button>
       </div>
     </div>
   </motion.div>
