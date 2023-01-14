@@ -12,9 +12,9 @@ const Navbar = ({ children }) => (
           </label>
         </div>
         <div className="flex justify-around items-center w-full py-3">
-          <h1 className="font-bold text-3xl ">
+          <h1 className="font-bold italic text-3xl ">
             Chala
-            <span className="hightlight">.dev</span>
+            <span className="text-primary">.dev</span>
           </h1>
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
