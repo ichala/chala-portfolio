@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { doc, getDoc } from 'firebase/firestore';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { SiGithub } from 'react-icons/si';
 import { MdOutlineOpenInNew } from 'react-icons/md';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,11 +16,16 @@ const Details = () => {
   const [Project, setProject] = useState(null);
   const [LoadingData, setLoadingData] = useState(true);
   const { id } = useParams();
+  const navigate = useNavigate();
   useEffect(() => {
     const getProject = async () => {
       const res = await getDoc(doc(db, 'Chala.dev', id));
-      setProject(res.data().project);
-      setLoadingData(false);
+      if (res.exists()) {
+        setProject(res.data().project);
+        setLoadingData(false);
+      } else {
+        navigate('/projects', { replace: true });
+      }
     };
     getProject();
   }, [id]);
