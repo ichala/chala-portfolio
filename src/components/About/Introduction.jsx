@@ -31,14 +31,29 @@ const Introduction = () => (
       exit={{ y: 100, opacity: 0, transition: { duration: 0.7 } }}
       className=" tracking-normal font-light text-left text-lg"
     >
-      Hi there! My name is Ali Jendoubi my friends call me Chala and I am a
-      full-stack software developer. This means that I have expertise in both
+      Hi there!
+      <br />
+      My name is Ali Jendoubi my friends call me Chala and I am a
+      full-stack software developer.
+      {' '}
+      <br />
+      {' '}
+      This means that I have expertise in both
       the front-end and back-end aspects of web development. I have a
       strong understanding of how all the pieces of a web application fit
-      together. Whether it&apos;s designing user interfaces, implementing databases
-      , or integrating applications with APIs, I have the skills and knowledge
+      together. Whether it&apos;s
+      <br />
+      - designing user interfaces
+      <br />
+      - implementing databases
+      <br />
+      - integrating applications with APIs
+      <br />
+      -  etc..
+      <br />
+      I have the skills and knowledge
       to take on any challenge. I am excited to continue learning and growing
-      as a full-stack developer and make a positive impact through my work
+      as a full-stack developer and make a positive impact through my work.
     </motion.p>
   </div>
 );
