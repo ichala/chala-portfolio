@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { BsFillFilterCircleFill } from 'react-icons/bs';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { collection, getDocs, query } from 'firebase/firestore';
+import { AiFillFire } from 'react-icons/ai';
 import Card from '../../components/Projects/Card';
 import Search from '../../components/Projects/Filters/Search';
 import FrameworkFilter from '../../components/Projects/Filters/FrameworkFilter';
@@ -54,13 +55,16 @@ const Projects = () => {
         ? searchParams.get('framework').split(',')
         : [];
       const search = searchParams.get('search');
+      const hot = searchParams.get('hot');
       setfilteredProjects(
         res.filter(
           (item) => (!search
             || item.details.title.toLowerCase().includes(search.toLowerCase()))
+            && (!hot || item.details.hot)
           && (!frameworks.length
             || frameworks.every((framework) => item.details.frameworks
               .map((data) => data.value).includes(framework))),
+
         ),
       );
       setLoadingData(false);
@@ -94,7 +98,7 @@ const Projects = () => {
         />
       </motion.h3>
       <label htmlFor="my-drawer-2" className="  drawer-button lg:hidden">
-        <div className="btm-nav z-20 my-2 ">
+        <div className="btm-nav z-20  ">
           <div>
             <BsFillFilterCircleFill className="text-primary" size={20} />
             <h2 className="text-primary font-normal">Filters</h2>
@@ -105,8 +109,37 @@ const Projects = () => {
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col ">
           <div className="flex gap-2 flex-wrap justify-center ">
+            {
+              filteredProjects.length < 1
+              && (
+              <div className="text-center">
+                <h2 className="text-light text-2xl">No Projects Found</h2>
+                <p className="text-light italic text-light">
+                  Try updating your filters
+                  or
+                  <button
+                    type="button"
+                    className="text-light italic text-light underline ml-1"
+                    onClick={
+                    () => {
+                      searchParams.delete('search');
+                      searchParams.delete('framework');
+                      searchParams.delete('hot');
+                      setSearchParams(searchParams);
+                    }
+                  }
+                  >
+                    reset them
+
+                  </button>
+                </p>
+              </div>
+              )
+            }
             {filteredProjects.map((project) => (
-              <Card key={project.id} data={project} />
+              <Link to={`/project/details/${project.id}`} key={project.id}>
+                <Card data={project} />
+              </Link>
             ))}
           </div>
         </div>
@@ -131,7 +164,33 @@ const Projects = () => {
                 SelectedFrameworks={SelectedFrameworks}
               />
             </div>
+            <div className="flex gap-3  justify-start items-center">
+              <span className="label-text ">
+                <div className="flex gap-1 my-6 justify-start items-center font-medium badge-md p-2 text-md">
+                  <AiFillFire />
+                  HOT Only?
+                </div>
+
+              </span>
+              <input
+                type="checkbox"
+                className="toggle toggle-primary"
+                checked={searchParams.get('hot')}
+                onChange={
+                (e) => {
+                  if (e.target.checked) {
+                    searchParams.set('hot', true);
+                  } else {
+                    searchParams.delete('hot');
+                  }
+                  setSearchParams(searchParams);
+                }
+              }
+              />
+
+            </div>
           </motion.ul>
+
         </div>
       </div>
     </>
