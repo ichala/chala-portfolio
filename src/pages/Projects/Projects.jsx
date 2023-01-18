@@ -64,15 +64,21 @@ const Projects = () => {
           && (!frameworks.length
             || frameworks.every((framework) => item.details.frameworks
               .map((data) => data.value).includes(framework))),
-
         ),
       );
+
       setLoadingData(false);
     };
     getProjects();
   }, [searchParams]);
   if (LoadingData) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex justify-center  items-center h-screen">
+        <div className="flex flex-col items-center gap-2">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-4 border-primary/60" />
+        </div>
+      </div>
+    );
   }
   return (
     <>
