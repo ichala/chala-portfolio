@@ -14,7 +14,9 @@ export const AdminContextProvider = ({ children }) => {
         setCurrentUser({
           email: user.email,
         });
-        setLoading(false);
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
       } else {
         setCurrentUser(null);
       }
@@ -32,7 +34,13 @@ export const AdminContextProvider = ({ children }) => {
   }
   return (
     <AdminContext.Provider value={{ currentUser }}>
-      Loading State
+      <div>
+        <div className="flex justify-center bg-base-200 items-center h-screen">
+          <div className="flex flex-col items-center gap-2">
+            <div className="animate-spin rounded-full h-32 w-32 border-b-4 border-primary/60" />
+          </div>
+        </div>
+      </div>
     </AdminContext.Provider>
   );
 };
