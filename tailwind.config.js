@@ -11,6 +11,9 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Plus Jakarta Sans', ...defaultTheme.fontFamily.sans]
+      },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
       }
    },
   },
