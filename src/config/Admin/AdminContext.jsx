@@ -19,6 +19,7 @@ export const AdminContextProvider = ({ children }) => {
         }, 1000);
       } else {
         setCurrentUser(null);
+        setLoading(false);
       }
     });
     return () => {
