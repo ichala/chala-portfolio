@@ -11,7 +11,7 @@ const Career = [
     companyLink: 'https://www.microverse.org/',
     location: 'Remote',
     date: 'Aug 22 - Present',
-    companyLogo: '/assets/company-logos/microverse.jpg',
+    companyLogo: '/assets/company-logos/Microverse.jpg',
     description: [
       'Reviewing code for students in the Microverse program',
       'Helping students through Zoom calls or Slack when they got stuck with code issues or technical blockers',
@@ -36,7 +36,7 @@ const Career = [
     name: 'Volunteer Mentor',
     company: 'Microverse',
     companyLink: 'https://www.microverse.org/',
-    companyLogo: '/assets/company-logos/microverse.jpg',
+    companyLogo: '/assets/company-logos/Microverse.jpg',
     location: 'Remote',
     date: 'Apr 22 - Aug 22',
     description: [
