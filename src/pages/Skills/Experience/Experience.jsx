@@ -79,7 +79,7 @@ const Studies = [
   {
     name: 'Full Stack Web Developer',
     company: 'Microverse',
-    companyLogo: '/assets/company-logos/microverse.jpg',
+    companyLogo: '/assets/company-logos/Microverse.jpg',
     companyLink: 'https://www.microverse.org/',
     location: 'Remote',
     date: 'Feb 22 - Sep 22',
