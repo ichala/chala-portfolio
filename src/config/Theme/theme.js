@@ -1,10 +1,10 @@
 import { useState, createContext } from 'react';
 
 export const ThemeContext = createContext();
-const ThemeList = ['cupcake', 'synthwave', 'halloween', 'garden', 'forest', 'luxury', 'dracula', 'night', 'winter'];
+const ThemeList = ['cupcake', 'synthwave', 'halloween', 'forest', 'luxury', 'dracula', 'night', 'winter'];
 
 export const ThemeProvider = ({ children }) => {
-  const [Theme, setTheme] = useState(JSON.parse(localStorage.getItem('theme')) || 'night');
+  const [Theme, setTheme] = useState(JSON.parse(localStorage.getItem('theme')) || 'halloween');
   localStorage.setItem('theme', JSON.stringify(Theme));
   return (
     <ThemeContext.Provider value={{ Theme, setTheme, ThemeList }}>
