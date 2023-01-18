@@ -20,7 +20,7 @@ const ContactFrom = () => {
           type="text"
           name="fullname"
           placeholder="what's your name ?"
-          className="input input-sm w-full max-w-md"
+          className="input input-primary input-sm w-full max-w-md"
         />
         <ValidationError
           prefix="fullname"
@@ -35,7 +35,7 @@ const ContactFrom = () => {
           type="text"
           name="email"
           placeholder="what's your email ?"
-          className="input input-sm w-full max-w-md"
+          className="input input-primary input-sm w-full max-w-md"
         />
         <ValidationError
           prefix="email"
@@ -50,7 +50,7 @@ const ContactFrom = () => {
           name="message"
           required
           placeholder="what's your message ?"
-          className="resize-none textarea h-24  w-full max-w-md"
+          className="resize-none input-primary textarea h-24  w-full max-w-md"
         />
         <ValidationError
           prefix="message"

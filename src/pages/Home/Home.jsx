@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { SiAngellist, SiUpwork } from 'react-icons/si';
+import { BsGithub, BsLinkedin, BsTwitter } from 'react-icons/bs';
 
 const Home = () => (
   <div>
@@ -36,13 +38,60 @@ const Home = () => (
           Transforming data into the graphical interface & layouts schema for
           all types of applications
         </p>
-        <button
+        <a
+          href="/assets/AliJendoubiResume.pdf"
+          target="_blank"
+          rel="noreferrer"
+          download
           type="submit"
           className="btn btn-primary btn-md uppercase rounded-lg"
         >
           Get Resume
-        </button>
-
+        </a>
+        <div
+          className="flex items-center justify-center gap-2 p-2 border-[1px] border-primary rounded-md"
+        >
+          <a
+            href="https://github.com/ichala"
+            target="_blank"
+            className="bg-primary text-primary-content rounded-md p-2"
+            rel="noreferrer"
+          >
+            <BsGithub size={20} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/alijendoubi/"
+            target="_blank"
+            className="bg-primary text-primary-content rounded-md p-2"
+            rel="noreferrer"
+          >
+            <BsLinkedin size={20} />
+          </a>
+          <a
+            href="https://twitter.com/_ichala"
+            target="_blank"
+            className="bg-primary text-primary-content rounded-md p-2"
+            rel="noreferrer"
+          >
+            <BsTwitter size={20} />
+          </a>
+          <a
+            href="https://www.upwork.com/freelancers/~013ad41e1b64462fb6/"
+            target="_blank"
+            className="bg-primary text-primary-content rounded-md p-2"
+            rel="noreferrer"
+          >
+            <SiUpwork size={20} />
+          </a>
+          <a
+            href="https://angel.co/u/ichala"
+            target="_blank"
+            className="bg-primary text-primary-content rounded-md p-2"
+            rel="noreferrer"
+          >
+            <SiAngellist size={20} />
+          </a>
+        </div>
       </motion.div>
     </div>
 
