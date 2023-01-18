@@ -17,7 +17,7 @@ const Skills = () => {
           {Title}
         </motion.h3>
 
-        <div className="tabs tabs-boxed ">
+        <div className="tabs tabs-boxed hidden sm:block">
           <NavLink
             to="/skills/"
             exact="true"
@@ -51,6 +51,27 @@ const Skills = () => {
         }}
         className="border-[1px] border-primary/60 border-dashed w-full my-2"
       />
+      <div className="tabs tabs-boxed m-2 sm:hidden">
+        <NavLink
+          to="/skills/"
+          exact="true"
+          className={({ isActive }) => (isActive ? 'tab-active tab' : 'tab')}
+        >
+          Frameworks
+        </NavLink>
+        <NavLink
+          to="/skills/experience"
+          className={({ isActive }) => (isActive ? 'tab-active tab' : 'tab')}
+        >
+          Experience
+        </NavLink>
+        <NavLink
+          to="/skills/soft"
+          className={({ isActive }) => (isActive ? 'tab-active tab' : 'tab')}
+        >
+          Soft Skills
+        </NavLink>
+      </div>
       <Outlet context={{ setTitle }} />
     </div>
   );
