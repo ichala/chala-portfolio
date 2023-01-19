@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import { doc, getDoc } from 'firebase/firestore';
-import { useNavigate, useParams } from 'react-router-dom';
-import { SiGithub } from 'react-icons/si';
-import { MdOutlineOpenInNew } from 'react-icons/md';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper';
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { doc, getDoc } from "firebase/firestore";
+import { useNavigate, useParams } from "react-router-dom";
+import { SiGithub } from "react-icons/si";
+import { MdOutlineOpenInNew } from "react-icons/md";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import IconGenerator from '../../tools/IconGenerator';
-import { db } from '../../config/firebase';
+import "swiper/css";
+import "swiper/css/pagination";
+import IconGenerator from "../../tools/IconGenerator";
+import { db } from "../../config/firebase";
 
 const Details = () => {
   const [Project, setProject] = useState(null);
@@ -19,12 +19,12 @@ const Details = () => {
   const navigate = useNavigate();
   useEffect(() => {
     const getProject = async () => {
-      const res = await getDoc(doc(db, 'Chala.dev', id));
+      const res = await getDoc(doc(db, "Chala.dev", id));
       if (res.exists()) {
         setProject(res.data().project);
         setLoadingData(false);
       } else {
-        navigate('/projects', { replace: true });
+        navigate("/projects", { replace: true });
       }
     };
     getProject();
@@ -32,8 +32,10 @@ const Details = () => {
 
   if (LoadingData) {
     return (
-      <div className="flex justify-center items-center h-full">
-        <h1 className="text-3xl font-bold">Loading...</h1>
+      <div className="flex justify-center  items-center h-screen">
+        <div className="flex flex-col items-center gap-2">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-4 border-primary/60" />
+        </div>
       </div>
     );
   }
@@ -76,7 +78,7 @@ const Details = () => {
             className=" group-hover:bg-primary  cursor-pointer bg-contain bg-center  h-[200px] w-full"
             style={{
               backgroundImage: `url(${Project.logoImage})`,
-              backgroundRepeat: 'no-repeat',
+              backgroundRepeat: "no-repeat",
             }}
           />
 
@@ -124,20 +126,18 @@ const Details = () => {
           }}
           className="lg:p-4 h-full bg-base-100 rounded-lg md:w-2/3 ww-full flex flex-col gap-10"
         >
-
           <div>
             <p className="text-xl font-bold">Description:</p>
             <p className="text-lg font-light">
-              {
-            Project?.details?.description
-}
+              {Project?.details?.description}
             </p>
           </div>
 
           <figure
             className=" group-hover:bg-primary rounded-lg  cursor-pointer bg-cover bg-center  h-[200px] w-full"
             style={{
-              backgroundImage: `url(${Project.mainImage})`, backgroundRepeat: 'no-repeat',
+              backgroundImage: `url(${Project.mainImage})`,
+              backgroundRepeat: "no-repeat",
             }}
           />
           <div>
