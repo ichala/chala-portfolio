@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { doc, getDoc } from "firebase/firestore";
-import { useNavigate, useParams } from "react-router-dom";
-import { SiGithub } from "react-icons/si";
-import { MdOutlineOpenInNew } from "react-icons/md";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import { doc, getDoc } from 'firebase/firestore';
+import { useNavigate, useParams } from 'react-router-dom';
+import { SiGithub } from 'react-icons/si';
+import { MdOutlineOpenInNew } from 'react-icons/md';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import IconGenerator from "../../tools/IconGenerator";
-import { db } from "../../config/firebase";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import IconGenerator from '../../tools/IconGenerator';
+import { db } from '../../config/firebase';
 
 const Details = () => {
   const [Project, setProject] = useState(null);
@@ -19,12 +19,12 @@ const Details = () => {
   const navigate = useNavigate();
   useEffect(() => {
     const getProject = async () => {
-      const res = await getDoc(doc(db, "Chala.dev", id));
+      const res = await getDoc(doc(db, 'Chala.dev', id));
       if (res.exists()) {
         setProject(res.data().project);
         setLoadingData(false);
       } else {
-        navigate("/projects", { replace: true });
+        navigate('/projects', { replace: true });
       }
     };
     getProject();
@@ -78,7 +78,7 @@ const Details = () => {
             className=" group-hover:bg-primary  cursor-pointer bg-contain bg-center  h-[200px] w-full"
             style={{
               backgroundImage: `url(${Project.logoImage})`,
-              backgroundRepeat: "no-repeat",
+              backgroundRepeat: 'no-repeat',
             }}
           />
 
@@ -137,7 +137,7 @@ const Details = () => {
             className=" group-hover:bg-primary rounded-lg  cursor-pointer bg-cover bg-center  h-[200px] w-full"
             style={{
               backgroundImage: `url(${Project.mainImage})`,
-              backgroundRepeat: "no-repeat",
+              backgroundRepeat: 'no-repeat',
             }}
           />
           <div>

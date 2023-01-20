@@ -39,7 +39,8 @@ const Projects = () => {
     const getFrameworks = (res) => {
       const FrameWorkData = [];
       res.map((project) => project.details?.frameworks.map(
-        (data) => !FrameWorkData.includes(data.value) && FrameWorkData.push(data.value),
+        (data) => !FrameWorkData.includes(data.value)
+            && FrameWorkData.push(data.value),
       ));
       setFrameWorks(FrameWorkData);
     };
@@ -59,11 +60,14 @@ const Projects = () => {
       setfilteredProjects(
         res.filter(
           (item) => (!search
-            || item.details.title.toLowerCase().includes(search.toLowerCase()))
+              || item.details.title
+                .toLowerCase()
+                .includes(search.toLowerCase()))
             && (!hot || item.details.hot)
-          && (!frameworks.length
-            || frameworks.every((framework) => item.details.frameworks
-              .map((data) => data.value).includes(framework))),
+            && (!frameworks.length
+              || frameworks.every((framework) => item.details.frameworks
+                .map((data) => data.value)
+                .includes(framework))),
         ),
       );
 
@@ -115,33 +119,26 @@ const Projects = () => {
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col ">
           <div className="flex gap-2 flex-wrap justify-center ">
-            {
-              filteredProjects.length < 1
-              && (
+            {filteredProjects.length < 1 && (
               <div className="text-center">
                 <h2 className="text-light text-2xl">No Projects Found</h2>
                 <p className="text-light italic text-light">
-                  Try updating your filters
-                  or
+                  Try updating your filters or
                   <button
                     type="button"
                     className="text-light italic text-light underline ml-1"
-                    onClick={
-                    () => {
+                    onClick={() => {
                       searchParams.delete('search');
                       searchParams.delete('framework');
                       searchParams.delete('hot');
                       setSearchParams(searchParams);
-                    }
-                  }
+                    }}
                   >
                     reset them
-
                   </button>
                 </p>
               </div>
-              )
-            }
+            )}
             {filteredProjects.map((project) => (
               <Link to={`/project/details/${project.id}`} key={project.id}>
                 <Card data={project} />
@@ -176,27 +173,22 @@ const Projects = () => {
                   <AiFillFire />
                   HOT Only?
                 </div>
-
               </span>
               <input
                 type="checkbox"
                 className="toggle toggle-primary"
                 checked={searchParams.get('hot')}
-                onChange={
-                (e) => {
+                onChange={(e) => {
                   if (e.target.checked) {
                     searchParams.set('hot', true);
                   } else {
                     searchParams.delete('hot');
                   }
                   setSearchParams(searchParams);
-                }
-              }
+                }}
               />
-
             </div>
           </motion.ul>
-
         </div>
       </div>
     </>
