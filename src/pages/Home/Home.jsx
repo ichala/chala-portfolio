@@ -37,33 +37,52 @@ const QuickLinks = [
   },
 
 ];
-const Testimonials = [
-  {
-    name: 'Manel Hammouche',
-    position: 'Full Stack Developer',
-    desc: '"Leader" is the word that comes to mind when I think about Ali. I’ve had the pleasure of knowing Ali for 4 months, during which we have collaborated on several projects. Above all, I was impressed with his ability to command a room and get people on board with ideas. And, of course, his communication skills and his passion for making good quality products. Ali would be a true asset for any software development position and comes with my heartfelt recommendation.',
-    link: 'https://www.linkedin.com/in/manel-hammouche-5b1b3a1b1/',
+// const Testimonials = [
+//   {
+//     name: 'Manel Hammouche',
+//     position: 'Full Stack Developer',
+//     desc: '"Leader" is the word that comes to mind
+//  when I think about Ali. I’ve had the pleasure of knowing Ali for
+//   4 months, during which we have collaborated on several projects.
+//   Above all, I was impressed with his ability to command a room and
+//   get people on board with ideas. And, of course, his communication
+//    skills and his passion for making good quality products. Ali would be
+//     a true asset for any software development position and
+//  comes with my heartfelt recommendation.',
+//     link: 'https://www.linkedin.com/in/manel-hammouche-5b1b3a1b1/',
 
-  },
-  {
-    name: 'Victor ADERIBIGBE',
-    position: 'Software Developer',
-    desc: 'Ali is one of the most open-minded developers, that I have ever worked with. He exhibited a high level of professionalism and a good impression as a developer. He contributed with good point delivery during each of our standup encounters and I would definitely vouch for him as a good team player. Not to forget his impeccable algorithm and problem-solving skills. He believes what is worth solving should be done better and faster.',
-    link: 'https://www.linkedin.com/in/victor-aderibigbe-9b8b3a1b1/',
-  },
-  {
-    name: 'Brian Nyachae',
-    position: 'Software Developer',
-    desc: 'I have worked with many professionals throughout my journey, but Ali was a unique one to work with. I started my work journey with him, and he helped me understand the basics of debugging in my second module at microvese. His work ethic is pristine and easily adjustable to a given situation. His ability to go out of his way to help others has made him stand out. Thanks a lot, man! You made the transition smooth and more comfortable.',
-    link: 'https://www.linkedin.com/in/brian-nyachae-9b8b3a1b1/',
-  },
+//   },
+//   {
+//     name: 'Victor ADERIBIGBE',
+//     position: 'Software Developer',
+//     desc: 'Ali is one of the most open-minded developers,
+//  that I have ever worked with. He exhibited a high
+//  level of professionalism and a good impression as a developer.
+//   He contributed with good point delivery during
+// each of our standup encounters and I would definitely vouch for him as
+//   a good team player. Not to forget his impeccable algorithm and problem-solving skills.
+//  He believes what is worth solving
+//   should be done better and faster.',
+//     link: 'https://www.linkedin.com/in/victor-aderibigbe-9b8b3a1b1/',
+//   },
+//   {
+//     name: 'Brian Nyachae',
+//     position: 'Software Developer',
+//     desc: 'I have worked with many professionals throughout my journey,
+//  but Ali was a unique one to work with. I started my work journey with him,
+//   and he helped me understand the basics of debugging in my second module at microvese.
+//    His work ethic is pristine and easily adjustable to a given situation.
+//     His ability to go out of his way to help others has made him stand out.
+//     Thanks a lot, man! You made the transition smooth and more comfortable.',
+//     link: 'https://www.linkedin.com/in/brian-nyachae-9b8b3a1b1/',
+//   },
 
-];
+// ];
 
-console.log(Testimonials);
+// console.log(Testimonials);
 const Home = () => (
-  <div>
-    <div className="flex flex-col w-full justify-center items-center lg:justify-between md:flex-row text-base-content">
+  <div className="flex flex-col w-full justify-center items-center min-h-[800px]">
+    <div className="flex flex-col w-full  justify-center items-center lg:justify-around md:flex-row text-base-content">
       <motion.div
         initial={{ y: 100 }}
         animate={{ y: 0 }}
@@ -93,8 +112,7 @@ const Home = () => (
         className="max-w-xs self-center flex justify-center flex-col gap-1"
       >
         <p className="text-center text-lg font-light">
-          Transforming data into the graphical interface & layouts schema for
-          all types of applications
+          I am open to work and available for new opportunities.
         </p>
         <a
           href="/assets/AliJendoubiResume.pdf"
