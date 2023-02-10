@@ -67,13 +67,17 @@ const ProfileCard = () => (
             </label>
           </li>
         </ul>
-        <button
-          type="button"
+        <a
           className="flex btn btn-primary btn-sm gap-1 items-center uppercase font-medium "
+          href="/assets/AliJendoubiResume.pdf"
+          target="_blank"
+          rel="noreferrer"
+          download
+          type="submit"
         >
           <ImCloudDownload className="w-6 h-5 " />
           Download CV
-        </button>
+        </a>
       </div>
     </div>
   </motion.div>
